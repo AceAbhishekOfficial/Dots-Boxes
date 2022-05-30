@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dots and Box</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amita">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/gradient-navbar-1.css">
+    <link rel="stylesheet" href="assets/css/gradient-navbar.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body style="background: url(&quot;assets/img/back1.png&quot;) no-repeat;background-size: cover;">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: linear-gradient(90deg, var(--orange) 16%, #ff8d07);border-bottom-right-radius: 16px;border-bottom-left-radius: 16px;padding: 6px;">
+        <div class="container"><a class="navbar-brand" href="#" style="color: rgb(0,0,0);font-family: Acme, sans-serif;font-size: 36px;padding: 9px 5px;">Dots and Boxes</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(0,0,0);font-size: 20px;font-family: Acme, sans-serif;"><strong>HOME</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(0,0,0);font-size: 20px;font-family: Acme, sans-serif;"><strong>RULES</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(0,0,0);font-size: 20px;font-family: Acme, sans-serif;"><strong>ABOUT</strong></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div style="text-align: center;">
+        <div class="main" >
+            <div class="d-flex menu">
+                <button class="btn btn-dark btn_menu" type="button" ><i class="fa fa-rotate-left" style="font-size: 24px;"></i></button>
+                <button class="btn btn-dark btn_menu" type="button" ><i class="fas fa-volume-up" style="font-size: 24px;"></i></button>
+                <button class="btn btn-dark btn_menu" type="button" ><i class="fa fa-arrow-left" style="font-size: 24px;"></i></button>
+                <button id="myBtn" class="btn btn-dark btn_menu" type="button" ><i class="fa fa-list-ul" style="font-size: 24px;"></i></button>
+            </div>
+            <div class="game">
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button>
+                </div>
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button>
+                </div>
+                
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button>
+                </div>
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button>
+                </div>
+
+
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button>
+                </div>
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button>
+                </div>
+
+
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button>
+                </div>
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button>
+                </div>
+
+
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button>
+                </div>
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button>
+                </div>
+
+
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button>
+                </div>
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button>
+                </div>
+
+
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button>
+                </div>
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button>
+                </div>
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button><button class="btn box" type="button">
+                    </button><button class="btn bar_h" type="button">
+                    </button>
+                </div>
+                
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button><button class="btn bar_v" type="button">
+                    </button><button class="btn dot" type="button" >
+                    </button>
+                </div>
+                
+
+            </div>
+            <div id="scoreFlex"  >
+                <div class="scoreHeading">
+                    Score&nbspBoard
+                </div>
+                <div class="scoreboard">
+                <div>
+                    <!-- <h1> Score&nbspBoard</h1> -->
+                    <ul class="Scores">
+                        <li class="scoreItem pls1">
+                            <button class="btn_score pl1">13</button>
+                            <span class="name">Abhishek</span>
+                            <i class="fas fa-crown king"></i>
+                        </li>
+                        <li class="scoreItem pls2">
+                            <button class="btn_score pl2">13</button>
+                            <span class="name">Abhishek</span>
+                            <i class="fas fa-crown king"></i>
+                        </li>
+                        <li class="scoreItem pls3">
+                            <button class="btn_score pl3">13</button>
+                            <span class="name">Abhishek</span>
+                            <i class="fas fa-crown king"></i>
+                        </li>
+                        <li class="scoreItem pls4">
+                            <button class="btn_score pl4">13</button>
+                            <span class="name">Abhishek</span>
+                            <i class="fas fa-crown king"></i>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <a style="text-decoration: none;" href="https://srivastava-abhishek.in/"><h1 id="mlab" style="background: linear-gradient(90deg, var(--orange) 16%, #ff8d07);padding: 20px;">Made with <img style="width: 40px; margin-top: -15px;" src="assets/img/heart.gif"> by Abhishek</h1></a>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <div id="myModal" class="modal">
+       <div class="modal-content">
+            <div style=" display: flex;align-items: center; flex-direction: column">
+                <div class="scoreHeading"style="position:relative;top:70px;left:20px">
+                    Score&nbspBoard
+                    <span class="close">&times;</span>
+                </div>
+                
+                <div class="scoreboard" >
+                    
+                <div>
+                    <!-- <h1> Score&nbspBoard</h1> -->
+                    <ul class="Scores">
+                        <li class="scoreItem pls1">
+                            <button class="btn_score pl1">13</button>
+                            <span class="name">Abhishek</span>
+                            <i class="fas fa-crown king"></i>
+                        </li>
+                        <li class="scoreItem pls2">
+                            <button class="btn_score pl2">13</button>
+                            <span class="name">Abhishek</span>
+                            <i class="fas fa-crown king"></i>
+                        </li>
+                        <li class="scoreItem pls3">
+                            <button class="btn_score pl3">13</button>
+                            <span class="name">Abhishek</span>
+                            <i class="fas fa-crown king"></i>
+                        </li>
+                        <li class="scoreItem pls4">
+                            <button class="btn_score pl4">13</button>
+                            <span class="name">Abhishek</span>
+                            <i class="fas fa-crown king"></i>
+                        </li>
+                      </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+            
+      
+     
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+    
+    
+</body>
+
+</html>
