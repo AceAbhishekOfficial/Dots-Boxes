@@ -156,11 +156,11 @@ function startGame()
         document.getElementById("name4").innerHTML=""+name4;
         document.getElementById("Card4").style.display="block";
 
-        document.getElementById("nameb3").innerHTML=""+name4;
-        document.getElementById("Cardb3").style.display="block";
+        document.getElementById("nameb4").innerHTML=""+name4;
+        document.getElementById("Cardb4").style.display="block";
 
-        document.getElementById("Gnameb3").innerHTML=""+name4;
-        document.getElementById("GCardb3").style.display="block";
+        document.getElementById("Gnameb4").innerHTML=""+name4;
+        document.getElementById("GCardb4").style.display="block";
         nameI[4]=name4[0];
         PLAYER++;
     }
