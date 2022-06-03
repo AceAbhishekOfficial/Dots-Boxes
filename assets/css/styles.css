@@ -4,10 +4,107 @@
     --player1: rgb(0, 188, 226);
     --player2: rgb(0, 255, 179);
     --player3: rgb(255, 0, 117);
+    
     --player4: rgb(255, 191, 0);
 }
 
 
+.enter
+{
+    padding-bottom: 100px;
+    
+}
+.enterFlex
+{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    
+}
+
+.enterboard {
+    margin-top: 30px;
+    color: rgb(204, 203, 203);
+    width: 420px;
+    height: auto;
+    background: rgb(1, 1, 1);
+    border-radius: 20px;
+    
+    border-width: 20px;
+    border-style: solid;
+    border-color: black;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+
+
+}
+
+.name_board
+{
+    text-align: center;
+    
+    padding: 10px;
+    
+}
+
+.enter_play
+{
+    width:50%;
+    padding: 10px;
+    border-radius: 200px;
+    margin-top: 40px;
+    
+    background-color: orange;
+    font-weight: bold;
+    font-size: 20px;
+    border-style: solid;
+    border-width: 6px;
+}
+
+.enterName
+{
+    width: 80%;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    
+    text-align: center;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    border-radius:200px ;
+    font-weight: bold;
+    margin-top: 5px;
+    border-style: solid ;
+    border-width: 5px;
+    
+}
+.enterName1
+{
+    border-color: var(--player1);
+}
+.enterName2
+{
+    border-color: var(--player2);
+}
+.enterName3
+{
+    border-color: var(--player3);
+}
+.enterName4
+{
+    border-color: var(--player4);
+}
+.enterName:focus
+{
+   
+    outline: none;
+}
+.enterName:active
+{
+    border-style: none;
+}
 .dot {
     width: 1%;
     height: 6px;
@@ -40,6 +137,9 @@
     margin-right: .5%;
     margin-left: .5%;
     padding: 0px;
+    font-weight: bold;
+    color: white;
+    font-size: 24px;
 }
 
 .btn_menu {
@@ -89,6 +189,7 @@
     margin-right: 0px;
     margin-left: 0px;
     width: 575px;
+    
 }
 
 .scoreHeading {
@@ -135,7 +236,7 @@
     margin-bottom: 20px;
     /* border-width: 3px;
     border-style: solid; */
-    box-shadow: 0px 0px 9px 0px var(--player4);
+    /*box-shadow: 0px 0px 9px 0px var(--player4);*/
 
 }
 
@@ -185,27 +286,70 @@
     box-shadow: 2px 2px 8px 0px var(--player4);
 }
 
+
+.bl1 {
+    background: var(--player1);
+   
+}
+
+.bl2 {
+    background: var(--player2);
+    
+}
+
+.bl3 {
+    background: var(--player3);
+    
+}
+
+.bl4 {
+    background: var(--player4);
+    
+}
+
 .pls1 {
 
-    box-shadow: 0px 0px 10px 0px var(--player1);
+    box-shadow: 0px 0px 10px 2px var(--player1);
 }
 
 .pls2 {
 
 
-    box-shadow: 0px 0px 10px 0px var(--player2);
+    box-shadow: 0px 0px 10px 2px var(--player2);
 }
 
 .pls3 {
 
 
-    box-shadow: 0px 0px 10px 0px var(--player3);
+    box-shadow: 0px 0px 10px 2px var(--player3);
 }
 
 .pls4 {
 
 
-    box-shadow: 0px 0px 10px 0px var(--player4);
+    box-shadow: 0px 0px 10px 2px var(--player4);
+}
+
+.box1
+{
+    background-color: rgba(0, 188, 226);
+    box-shadow: 0px 0px 10px 2px rgba(0, 188, 226);
+}
+.box2
+{
+    background-color: rgb(0, 255, 179);
+    box-shadow: 0px 0px 10px 2px rgba(0, 255, 179);
+}
+
+.box3
+{
+    background-color: rgba(255, 0, 117);
+    box-shadow: 0px 0px 10px 2px rgba(255, 0, 117);
+}
+.box4
+{
+    background-color: rgba(255, 191, 0);
+    box-shadow: 0px 0px 10px 2px rgba(255, 191, 0);
 }
 
 
@@ -232,7 +376,22 @@ ul {
     margin-left: 40px;
     
 }
-
+.Winner
+{
+    background-image: url('/assets/img/6ob.gif');
+    background-size: 15%;
+}
+#winFlex
+{
+    position: relative;
+    width: 100%;
+    top:30px;
+    left:40%;
+    padding-bottom: 250px;
+    
+    
+    
+}
 
 #mlab
 {
@@ -242,6 +401,8 @@ ul {
     font-family:Acme, ABeeZee, sans-serif;
     color: #000;
 }
+
+
 /* TABLET */
 
 @media only screen and (max-width: 1200px) 
@@ -283,7 +444,10 @@ ul {
         height: 40px;
         font-size: 18px;
     }
-
+    .box
+    {
+        font-size: 18px;
+    }
 }
 
 /* PHONE */
@@ -324,7 +488,10 @@ ul {
     {
         width: 80%;
     } 
-    
+     #winFlex
+     {
+         left:10px;
+     }
     
 }
 
@@ -381,7 +548,7 @@ ul {
   {
     color: white;
     float: right;
-    font-size: 100px;
+    font-size: 50px;
     font-weight: bold;
     position: relative;
     left:15%;
@@ -397,6 +564,40 @@ ul {
   
  
   
+  /* ///////////////////////////// ACTIVE KEYS ///////////////////////////////// */
+
+
+.btn:active
+{
+    box-shadow: 0px 0px 0px 0px;
+}
+.btn_player1
+{
+    background-color: var(--player1);
+    box-shadow: 0px 0px 10px 2px var(--player1);
+}
+.btn_player2
+{
+    background-color: var(--player2);
+    box-shadow: 0px 0px 10px 2px var(--player2);
+}
+.btn_player3
+{
+    background-color: var(--player3);
+    box-shadow: 0px 0px 10px 2px var(--player3);
+}
+.btn_player4
+{
+    background-color: var(--player4);
+    box-shadow: 0px 0px 10px 2px var(--player4);
+}
+
+
+
+
+
+
+/* //////////////////////////////// CELEBRATIOn /////////////////// */
+
+
   
-
-

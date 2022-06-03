@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dots and Box</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amita">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/gradient-navbar-1.css">
+    <link rel="stylesheet" href="assets/css/gradient-navbar.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/game.js"></script>
+    
+    
+</head>
+<body style="background: url(&quot;assets/img/back1.png&quot;) no-repeat;background-size: cover;">
+    
+    
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: linear-gradient(90deg, var(--orange) 16%, #ff8d07);border-bottom-right-radius: 16px;border-bottom-left-radius: 16px;padding: 6px;">
+        <div class="container"><a class="navbar-brand" href="#" style="color: rgb(0,0,0);font-family: Acme, sans-serif;font-size: 36px;padding: 9px 5px;">Dots and Boxes</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="Index.html" style="color: rgb(0,0,0);font-size: 20px;font-family: Acme, sans-serif;"><strong>HOME</strong></a></li>
+                    
+                    <!-- <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(0,0,0);font-size: 20px;font-family: Acme, sans-serif;"><strong>RULES</strong></a></li> -->
+                    <li class="nav-item"><a class="nav-link" onclick="Credits()" style="color: rgb(0,0,0);font-size: 20px;font-family: Acme, sans-serif;"><strong>ABOUT</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://forms.gle/9Vh1FyuegDVMWkZt6" style="color: rgb(0,0,0);font-size: 20px;font-family: Acme, sans-serif;"><strong>FEEDBACK</strong></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="musics">
+        <audio src="assets/mus/theme.mp3" id="theme"></audio>
+    </div>
+    <div class="enter" id="enter">
+        <div  class="enterFlex">
+            <div class="scoreHeading ">
+                Enter&nbspNames
+            </div>
+            <div class="enterboard">
+            <div>
+                <!-- <h1> Score&nbspBoard</h1> -->
+                <ul class="Scores">
+                    <li class="name_board">
+                        <!-- <button class="btn_name bl1 pl1"></button> -->
+                        <input class="enterName pls1 enterName1" id="nameI1" autocomplete="off">
+                        
+                    </li>
+                    <li class="name_board ">
+                        <!-- <button class="btn_name bl1 pl1"></button> -->
+                        <input class="enterName pls2 enterName2" id="nameI2" autocomplete="off">
+                        
+                    </li>
+                    <li class="name_board">
+                        <!-- <button class="btn_name bl1 pl1"></button> -->
+                        <input class="enterName pls3 enterName3" id="nameI3" autocomplete="off">
+                        
+                    </li>
+                    <li class="name_board">
+                        <!-- <button class="btn_name bl1 pl1"></button> -->
+                        <input class="enterName pls4 enterName4" id="nameI4" autocomplete="off">
+                        
+                    </li>
+                    <li class="name_board">
+                        <!-- <button class="btn_name bl1 pl1"></button> -->
+                        <button class="enter_play" onclick="startGame()">PLAY</button>
+                        
+                    </li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+        </div> 
+    </div>
+   
+    <div style="text-align: center;" id="mainGame">
+        <div class="main">
+            <div class="d-flex menu">
+                <button class="btn btn-dark btn_menu" type="button" onclick="reload()"><i class="fa fa-rotate-left" style="font-size: 24px;"></i></button>
+                <button class="btn btn-dark btn_menu" type="button" onclick="playTheme()"><i class="fas fa-volume-up" style="font-size: 24px;"></i></button>
+                <button class="btn btn-dark btn_menu" type="button" onclick='quit()'><i class="fa fa-arrow-left" style="font-size: 24px;"></i></button>
+                <button id="myBtn" class="btn btn-dark btn_menu " type="button" ><i class="fa fa-list-ul" style="font-size: 24px;"></i></button>
+            </div>
+            <div class="game">
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_0_1" onclick = "clickBtn(0,1)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_0_3" onclick = "clickBtn(0,3)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_0_5" onclick = "clickBtn(0,5)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_0_7" onclick = "clickBtn(0,7)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_0_9" onclick = "clickBtn(0,9)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_0_11" onclick = "clickBtn(0,11)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_0_13" onclick = "clickBtn(0,13)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_0_15" onclick = "clickBtn(0,15)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_0_17" onclick = "clickBtn(0,17)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button" id="btn_1_0" onclick = "clickBtn(1,0)">
+                    </button><button class="btn box" type="button" id="box_1_1" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_1_2" onclick = "clickBtn(1,2)">
+                    </button><button class="btn box" type="button" id="box_1_3" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_1_4" onclick = "clickBtn(1,4)">
+                    </button><button class="btn box" type="button" id="box_1_5" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_1_6" onclick = "clickBtn(1,6)">
+                    </button><button class="btn box" type="button" id="box_1_7" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_1_8" onclick = "clickBtn(1,8)">
+                    </button><button class="btn box" type="button" id="box_1_9" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_1_10" onclick = "clickBtn(1,10)">
+                    </button><button class="btn box" type="button" id="box_1_11" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_1_12" onclick = "clickBtn(1,12)">
+                    </button><button class="btn box" type="button" id="box_1_13" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_1_14" onclick = "clickBtn(1,14)">
+                    </button><button class="btn box" type="button" id="box_1_15" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_1_16" onclick = "clickBtn(1,16)">
+                    </button><button class="btn box" type="button" id="box_1_17" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_1_18" onclick = "clickBtn(1,18)">
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_2_1" onclick = "clickBtn(2,1)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_2_3" onclick = "clickBtn(2,3)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_2_5" onclick = "clickBtn(2,5)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_2_7" onclick = "clickBtn(2,7)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_2_9" onclick = "clickBtn(2,9)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_2_11" onclick = "clickBtn(2,11)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_2_13" onclick = "clickBtn(2,13)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_2_15" onclick = "clickBtn(2,15)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_2_17" onclick = "clickBtn(2,17)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button" id="btn_3_0" onclick = "clickBtn(3,0)">
+                    </button><button class="btn box" type="button" id="box_3_1" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_3_2" onclick = "clickBtn(3,2)">
+                    </button><button class="btn box" type="button" id="box_3_3" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_3_4" onclick = "clickBtn(3,4)">
+                    </button><button class="btn box" type="button" id="box_3_5" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_3_6" onclick = "clickBtn(3,6)">
+                    </button><button class="btn box" type="button" id="box_3_7" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_3_8" onclick = "clickBtn(3,8)">
+                    </button><button class="btn box" type="button" id="box_3_9" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_3_10" onclick = "clickBtn(3,10)">
+                    </button><button class="btn box" type="button" id="box_3_11" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_3_12" onclick = "clickBtn(3,12)">
+                    </button><button class="btn box" type="button" id="box_3_13" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_3_14" onclick = "clickBtn(3,14)">
+                    </button><button class="btn box" type="button" id="box_3_15" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_3_16" onclick = "clickBtn(3,16)">
+                    </button><button class="btn box" type="button" id="box_3_17" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_3_18" onclick = "clickBtn(3,18)">
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_4_1" onclick = "clickBtn(4,1)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_4_3" onclick = "clickBtn(4,3)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_4_5" onclick = "clickBtn(4,5)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_4_7" onclick = "clickBtn(4,7)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_4_9" onclick = "clickBtn(4,9)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_4_11" onclick = "clickBtn(4,11)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_4_13" onclick = "clickBtn(4,13)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_4_15" onclick = "clickBtn(4,15)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_4_17" onclick = "clickBtn(4,17)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button" id="btn_5_0" onclick = "clickBtn(5,0)">
+                    </button><button class="btn box" type="button" id="box_5_1" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_5_2" onclick = "clickBtn(5,2)">
+                    </button><button class="btn box" type="button" id="box_5_3" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_5_4" onclick = "clickBtn(5,4)">
+                    </button><button class="btn box" type="button" id="box_5_5" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_5_6" onclick = "clickBtn(5,6)">
+                    </button><button class="btn box" type="button" id="box_5_7" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_5_8" onclick = "clickBtn(5,8)">
+                    </button><button class="btn box" type="button" id="box_5_9" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_5_10" onclick = "clickBtn(5,10)">
+                    </button><button class="btn box" type="button" id="box_5_11" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_5_12" onclick = "clickBtn(5,12)">
+                    </button><button class="btn box" type="button" id="box_5_13" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_5_14" onclick = "clickBtn(5,14)">
+                    </button><button class="btn box" type="button" id="box_5_15" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_5_16" onclick = "clickBtn(5,16)">
+                    </button><button class="btn box" type="button" id="box_5_17" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_5_18" onclick = "clickBtn(5,18)">
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_6_1" onclick = "clickBtn(6,1)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_6_3" onclick = "clickBtn(6,3)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_6_5" onclick = "clickBtn(6,5)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_6_7" onclick = "clickBtn(6,7)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_6_9" onclick = "clickBtn(6,9)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_6_11" onclick = "clickBtn(6,11)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_6_13" onclick = "clickBtn(6,13)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_6_15" onclick = "clickBtn(6,15)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_6_17" onclick = "clickBtn(6,17)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button" id="btn_7_0" onclick = "clickBtn(7,0)">
+                    </button><button class="btn box" type="button" id="box_7_1" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_7_2" onclick = "clickBtn(7,2)">
+                    </button><button class="btn box" type="button" id="box_7_3" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_7_4" onclick = "clickBtn(7,4)">
+                    </button><button class="btn box" type="button" id="box_7_5" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_7_6" onclick = "clickBtn(7,6)">
+                    </button><button class="btn box" type="button" id="box_7_7" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_7_8" onclick = "clickBtn(7,8)">
+                    </button><button class="btn box" type="button" id="box_7_9" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_7_10" onclick = "clickBtn(7,10)">
+                    </button><button class="btn box" type="button" id="box_7_11" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_7_12" onclick = "clickBtn(7,12)">
+                    </button><button class="btn box" type="button" id="box_7_13" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_7_14" onclick = "clickBtn(7,14)">
+                    </button><button class="btn box" type="button" id="box_7_15" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_7_16" onclick = "clickBtn(7,16)">
+                    </button><button class="btn box" type="button" id="box_7_17" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_7_18" onclick = "clickBtn(7,18)">
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_8_1" onclick = "clickBtn(8,1)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_8_3" onclick = "clickBtn(8,3)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_8_5" onclick = "clickBtn(8,5)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_8_7" onclick = "clickBtn(8,7)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_8_9" onclick = "clickBtn(8,9)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_8_11" onclick = "clickBtn(8,11)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_8_13" onclick = "clickBtn(8,13)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_8_15" onclick = "clickBtn(8,15)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_8_17" onclick = "clickBtn(8,17)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button" id="btn_9_0" onclick = "clickBtn(9,0)">
+                    </button><button class="btn box" type="button" id="box_9_1" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_9_2" onclick = "clickBtn(9,2)">
+                    </button><button class="btn box" type="button" id="box_9_3" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_9_4" onclick = "clickBtn(9,4)">
+                    </button><button class="btn box" type="button" id="box_9_5" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_9_6" onclick = "clickBtn(9,6)">
+                    </button><button class="btn box" type="button" id="box_9_7" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_9_8" onclick = "clickBtn(9,8)">
+                    </button><button class="btn box" type="button" id="box_9_9" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_9_10" onclick = "clickBtn(9,10)">
+                    </button><button class="btn box" type="button" id="box_9_11" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_9_12" onclick = "clickBtn(9,12)">
+                    </button><button class="btn box" type="button" id="box_9_13" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_9_14" onclick = "clickBtn(9,14)">
+                    </button><button class="btn box" type="button" id="box_9_15" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_9_16" onclick = "clickBtn(9,16)">
+                    </button><button class="btn box" type="button" id="box_9_17" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_9_18" onclick = "clickBtn(9,18)">
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_10_1" onclick = "clickBtn(10,1)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_10_3" onclick = "clickBtn(10,3)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_10_5" onclick = "clickBtn(10,5)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_10_7" onclick = "clickBtn(10,7)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_10_9" onclick = "clickBtn(10,9)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_10_11" onclick = "clickBtn(10,11)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_10_13" onclick = "clickBtn(10,13)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_10_15" onclick = "clickBtn(10,15)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_10_17" onclick = "clickBtn(10,17)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button" id="btn_11_0" onclick = "clickBtn(11,0)">
+                    </button><button class="btn box" type="button" id="box_11_1" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_11_2" onclick = "clickBtn(11,2)">
+                    </button><button class="btn box" type="button" id="box_11_3" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_11_4" onclick = "clickBtn(11,4)">
+                    </button><button class="btn box" type="button" id="box_11_5" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_11_6" onclick = "clickBtn(11,6)">
+                    </button><button class="btn box" type="button" id="box_11_7" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_11_8" onclick = "clickBtn(11,8)">
+                    </button><button class="btn box" type="button" id="box_11_9" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_11_10" onclick = "clickBtn(11,10)">
+                    </button><button class="btn box" type="button" id="box_11_11" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_11_12" onclick = "clickBtn(11,12)">
+                    </button><button class="btn box" type="button" id="box_11_13" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_11_14" onclick = "clickBtn(11,14)">
+                    </button><button class="btn box" type="button" id="box_11_15" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_11_16" onclick = "clickBtn(11,16)">
+                    </button><button class="btn box" type="button" id="box_11_17" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_11_18" onclick = "clickBtn(11,18)">
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_12_1" onclick = "clickBtn(12,1)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_12_3" onclick = "clickBtn(12,3)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_12_5" onclick = "clickBtn(12,5)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_12_7" onclick = "clickBtn(12,7)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_12_9" onclick = "clickBtn(12,9)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_12_11" onclick = "clickBtn(12,11)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_12_13" onclick = "clickBtn(12,13)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_12_15" onclick = "clickBtn(12,15)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_12_17" onclick = "clickBtn(12,17)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button" id="btn_13_0" onclick = "clickBtn(13,0)">
+                    </button><button class="btn box" type="button" id="box_13_1" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_13_2" onclick = "clickBtn(13,2)">
+                    </button><button class="btn box" type="button" id="box_13_3" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_13_4" onclick = "clickBtn(13,4)">
+                    </button><button class="btn box" type="button" id="box_13_5" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_13_6" onclick = "clickBtn(13,6)">
+                    </button><button class="btn box" type="button" id="box_13_7" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_13_8" onclick = "clickBtn(13,8)">
+                    </button><button class="btn box" type="button" id="box_13_9" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_13_10" onclick = "clickBtn(13,10)">
+                    </button><button class="btn box" type="button" id="box_13_11" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_13_12" onclick = "clickBtn(13,12)">
+                    </button><button class="btn box" type="button" id="box_13_13" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_13_14" onclick = "clickBtn(13,14)">
+                    </button><button class="btn box" type="button" id="box_13_15" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_13_16" onclick = "clickBtn(13,16)">
+                    </button><button class="btn box" type="button" id="box_13_17" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_13_18" onclick = "clickBtn(13,18)">
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_14_1" onclick = "clickBtn(14,1)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_14_3" onclick = "clickBtn(14,3)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_14_5" onclick = "clickBtn(14,5)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_14_7" onclick = "clickBtn(14,7)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_14_9" onclick = "clickBtn(14,9)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_14_11" onclick = "clickBtn(14,11)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_14_13" onclick = "clickBtn(14,13)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_14_15" onclick = "clickBtn(14,15)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_14_17" onclick = "clickBtn(14,17)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button" id="btn_15_0" onclick = "clickBtn(15,0)">
+                    </button><button class="btn box" type="button" id="box_15_1" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_15_2" onclick = "clickBtn(15,2)">
+                    </button><button class="btn box" type="button" id="box_15_3" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_15_4" onclick = "clickBtn(15,4)">
+                    </button><button class="btn box" type="button" id="box_15_5" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_15_6" onclick = "clickBtn(15,6)">
+                    </button><button class="btn box" type="button" id="box_15_7" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_15_8" onclick = "clickBtn(15,8)">
+                    </button><button class="btn box" type="button" id="box_15_9" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_15_10" onclick = "clickBtn(15,10)">
+                    </button><button class="btn box" type="button" id="box_15_11" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_15_12" onclick = "clickBtn(15,12)">
+                    </button><button class="btn box" type="button" id="box_15_13" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_15_14" onclick = "clickBtn(15,14)">
+                    </button><button class="btn box" type="button" id="box_15_15" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_15_16" onclick = "clickBtn(15,16)">
+                    </button><button class="btn box" type="button" id="box_15_17" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_15_18" onclick = "clickBtn(15,18)">
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_16_1" onclick = "clickBtn(16,1)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_16_3" onclick = "clickBtn(16,3)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_16_5" onclick = "clickBtn(16,5)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_16_7" onclick = "clickBtn(16,7)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_16_9" onclick = "clickBtn(16,9)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_16_11" onclick = "clickBtn(16,11)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_16_13" onclick = "clickBtn(16,13)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_16_15" onclick = "clickBtn(16,15)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_16_17" onclick = "clickBtn(16,17)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn bar_h" type="button" id="btn_17_0" onclick = "clickBtn(17,0)">
+                    </button><button class="btn box" type="button" id="box_17_1" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_17_2" onclick = "clickBtn(17,2)">
+                    </button><button class="btn box" type="button" id="box_17_3" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_17_4" onclick = "clickBtn(17,4)">
+                    </button><button class="btn box" type="button" id="box_17_5" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_17_6" onclick = "clickBtn(17,6)">
+                    </button><button class="btn box" type="button" id="box_17_7" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_17_8" onclick = "clickBtn(17,8)">
+                    </button><button class="btn box" type="button" id="box_17_9" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_17_10" onclick = "clickBtn(17,10)">
+                    </button><button class="btn box" type="button" id="box_17_11" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_17_12" onclick = "clickBtn(17,12)">
+                    </button><button class="btn box" type="button" id="box_17_13" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_17_14" onclick = "clickBtn(17,14)">
+                    </button><button class="btn box" type="button" id="box_17_15" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_17_16" onclick = "clickBtn(17,16)">
+                    </button><button class="btn box" type="button" id="box_17_17" disabled>
+                    </button><button class="btn bar_h" type="button" id="btn_17_18" onclick = "clickBtn(17,18)">
+                    </button>
+                </div>
+
+              
+                
+                
+                <div style="text-align: center;">
+                    <button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_18_1" onclick = "clickBtn(18,1)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_18_3" onclick = "clickBtn(18,3)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_18_5" onclick = "clickBtn(18,5)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_18_7" onclick = "clickBtn(18,7)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_18_9" onclick = "clickBtn(18,9)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_18_11" onclick = "clickBtn(18,11)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_18_13" onclick = "clickBtn(18,13)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_18_15" onclick = "clickBtn(18,15)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button><button class="btn bar_v" type="button" id="btn_18_17" onclick = "clickBtn(18,17)">
+                    </button><button class="btn dot" type="button" disabled>
+                    </button>
+                </div>
+               
+
+
+               
+                
+
+            </div>
+            <div id="scoreFlex"  >
+                <div class="scoreHeading">
+                    Score&nbspBoard
+                </div>
+                <div class="scoreboard">
+                <div>
+                    <!-- <h1> Score&nbspBoard</h1> -->
+                    <ul class="Scores">
+                        <li class="scoreItem pls1" id="Card1">
+                            <button class="btn_score bl1 pl1" id="score1">0</button>
+                            <span class="name" id="name1">Abhishek</span>
+                            <i class="fas fa-crown king" id="king1"></i>
+                        </li>
+                        <li class="scoreItem " id="Card2">
+                            <button class="btn_score bl2" id="score2">0</button>
+                            <span class="name" id="name2" >Abhishek</span>
+                            <i class="fas fa-crown king" id="king2"></i>
+                        </li>
+                        <li class="scoreItem " id="Card3">
+                            <button class="btn_score bl3" id="score3">0</button>
+                            <span class="name" id="name3" >Abhishek</span>
+                            <i class="fas fa-crown king" id="king3"></i>
+                        </li>
+                        <li class="scoreItem " id="Card4">
+                            <button class="btn_score bl4" id="score4">0</button>
+                            <span class="name"id="name4" >Abhishek</span>
+                            <i class="fas fa-crown king" id="king4"></i>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: red;">
+    <script src="confetti.js"></script>
+    </div>
+    <div class="Winner">
+   <div id="winFlex"  >
+        <div class="scoreHeading">
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGame&nbspOver
+        </div>
+        <div class="scoreboard">
+        <div>
+            <!-- <h1> Score&nbspBoard</h1> -->
+            <ul class="Scores" style="text-align: center;">
+                <li class="scoreItem pls1" id="Cardb1">
+                    <button class="btn_score bl1" id="scoreb1">13</button>
+                    <span class="name" id="nameb1">Abhishek</span>
+                    <i class="fas fa-crown king"id="kingb1"></i>
+                </li>
+                <li class="scoreItem pls2" id="Cardb2">
+                    <button class="btn_score bl2 bl2" id="scoreb2">13</button>
+                    <span class="name" id="nameb2">Abhishek</span>
+                    <i class="fas fa-crown king"id="kingb2"></i>
+                </li>
+                <li class="scoreItem pls3" id="Cardb3">
+                    <button class="btn_score bl3" id="scoreb3">13</button>
+                    <span class="name" id="nameb3">Abhishek</span>
+                    <i class="fas fa-crown king" id="kingb3"></i>
+                </li>
+                <li class="scoreItem pls4" id="Cardb4">
+                    <button class="btn_score bl4" id="scoreb4">13</button>
+                    <span class="name" id="nameb4">Abhishek</span>
+                    <i class="fas fa-crown king"id="kingb4"></i>
+                </li>
+              </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    <a style="text-decoration: none;" href="https://srivastava-abhishek.in/"><h1 id="mlab" style="background: linear-gradient(90deg, var(--orange) 16%, #ff8d07);padding: 20px;">Made with <img style="width: 40px; margin-top: -15px;" src="assets/img/heart.gif"> by Abhishek</h1></a>
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <div id="myModal" class="modal">
+       <div class="modal-content">
+            <div style=" display: flex;align-items: center; flex-direction: column">
+                <div class="scoreHeading"style="position:relative;top:70px;left:20px">
+                    Score&nbspBoard
+                    <span class="close">&times;</span>
+                </div>
+                
+                <div class="scoreboard" >
+                    
+                <div>
+                    <!-- <h1> Score&nbspBoard</h1> -->
+                    <ul class="Scores">
+                        <li class="scoreItem pls1" id="Cardb1">
+                            <button class="btn_score bl1" id="scoreb1">13</button>
+                            <span class="name" id="nameb1">Abhishek</span>
+                            <i class="fas fa-crown king"id="kingb1"></i>
+                        </li>
+                        <li class="scoreItem pls2" id="Cardb2">
+                            <button class="btn_score bl2 bl2" id="scoreb2">13</button>
+                            <span class="name" id="nameb2">Abhishek</span>
+                            <i class="fas fa-crown king"id="kingb2"></i>
+                        </li>
+                        <li class="scoreItem pls3" id="Cardb3">
+                            <button class="btn_score bl3" id="scoreb3">13</button>
+                            <span class="name" id="nameb3">Abhishek</span>
+                            <i class="fas fa-crown king" id="kingb3"></i>
+                        </li>
+                        <li class="scoreItem pls4" id="Cardb4">
+                            <button class="btn_score bl4" id="scoreb4">13</button>
+                            <span class="name" id="nameb4">Abhishek</span>
+                            <i class="fas fa-crown king"id="kingb4"></i>
+                        </li>
+                      </ul>
+                     </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+  
+    <div id="myModal2" class="modal">
+        <div class="modal-content">
+             <div style=" display: flex;align-items: center; flex-direction: column">
+                 <div class="scoreHeading"style="position:relative;top:70px;left:20px">
+                     Credits
+                     <span class="close" onclick="CloseCredits()">&times;</span>
+                 </div>
+                 
+                 <div class="scoreboard" >
+                     
+                 <div>
+                     <!-- <h1> Score&nbspBoard</h1> -->
+                     <div class="Scores">
+                         <div style="padding-top: 30px;">
+                            <h3>DESIGNING/DEVELOPMENT </h3>
+                             <ul style="text-align: left;">
+                                 
+                                 <li>Abhishek Srivastava.</li>
+                               
+                             </ul>
+                         </div>
+                         <div style="padding-top: 30px;">
+                            <h3>LOGO DESIGNING</h3>
+                             <ul style="text-align: left;">
+                                 
+                                 <li>Vivek Kashyap (Polar Bear)</li>
+                             </ul>
+                         </div>
+                         <div style="padding-top: 30px;">
+                            <h3>MUSIC</h3>
+                             <ul style="text-align: left;">
+                                 
+                                 <li>Angry Birds Theme Song.</li>
+                                 <li>Mushroom Age Theme Song (Compiled).</li>
+                             </ul>
+                         </div>
+                         <div style="padding-top: 30px;">
+                            <h3>TESTING</h3>
+                             <ul style="text-align: left;">
+                                 
+                                 <li>Abhijeet</li>
+                                 <li>You.</li>
+                             </ul>
+                         </div>
+                        </div>
+                 </div>
+                 
+             </div>
+         </div>
+     </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+          UpdateScoreBoard2();
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+    
+    
+</body>
+
+</html>
