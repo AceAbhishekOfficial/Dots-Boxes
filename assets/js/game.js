@@ -1,7 +1,7 @@
 console.log("Game Loaded");
 function Credits()
 {
-    console.log("fuck");
+    
     var modal = document.getElementById("myModal2");
     modal.style.display = "block";
 }
@@ -10,6 +10,21 @@ function CloseCredits()
 {
    
     var modal = document.getElementById("myModal2");
+    modal.style.display = "none";
+}
+
+function Score()
+{
+    
+    var modal = document.getElementById("myModal");
+    UpdateScoreBoard2();
+    modal.style.display = "block";
+}
+
+function CloseScore()
+{
+   
+    var modal = document.getElementById("myModal");
     modal.style.display = "none";
 }
 var chance =0;
@@ -88,6 +103,10 @@ function startGame()
     document.getElementById("Cardb2").style.display="none";
     document.getElementById("Cardb3").style.display="none";
     document.getElementById("Cardb4").style.display="none";
+    document.getElementById("GCardb1").style.display="none";
+    document.getElementById("GCardb2").style.display="none";
+    document.getElementById("GCardb3").style.display="none";
+    document.getElementById("GCardb4").style.display="none";
     name1 =""+document.getElementById("nameI1").value;
     if(name1.length>0)
     {
@@ -97,6 +116,9 @@ function startGame()
 
         document.getElementById("nameb1").innerHTML=""+name1;
         document.getElementById("Cardb1").style.display="block";
+
+        document.getElementById("Gnameb1").innerHTML=""+name1;
+        document.getElementById("GCardb1").style.display="block";
         PLAYER++;
     }
     name2 =""+document.getElementById("nameI2").value;
@@ -108,6 +130,9 @@ function startGame()
 
         document.getElementById("nameb2").innerHTML=""+name2;
         document.getElementById("Cardb2").style.display="block";
+
+        document.getElementById("Gnameb2").innerHTML=""+name2;
+        document.getElementById("GCardb2").style.display="block";
         PLAYER++;
     }
     name3 =""+document.getElementById("nameI3").value;
@@ -119,6 +144,10 @@ function startGame()
 
         document.getElementById("nameb3").innerHTML=""+name3;
         document.getElementById("Cardb3").style.display="block";
+
+        document.getElementById("Gnameb3").innerHTML=""+name3;
+        document.getElementById("GCardb3").style.display="block";
+
         PLAYER++;
     }
     name4 =""+document.getElementById("nameI4").value;
@@ -127,8 +156,11 @@ function startGame()
         document.getElementById("name4").innerHTML=""+name4;
         document.getElementById("Card4").style.display="block";
 
-        document.getElementById("nameb4").innerHTML=""+name4;
-        document.getElementById("Cardb4").style.display="block";
+        document.getElementById("nameb3").innerHTML=""+name4;
+        document.getElementById("Cardb3").style.display="block";
+
+        document.getElementById("Gnameb3").innerHTML=""+name4;
+        document.getElementById("GCardb3").style.display="block";
         nameI[4]=name4[0];
         PLAYER++;
     }
@@ -399,17 +431,16 @@ function UpdateChance()
     player = chance+1;
     document.getElementById("Card"+player).classList.remove("pls"+player);   
     document.getElementById("score"+player).classList.remove("pl"+player);
-    console.log("p"+player);
+    // console.log("p"+player);
     while(true)
     {
         player++;
-        console.log("p"+player);
+        
         player=player%(5);
-        console.log("p"+player);
+        
         if(isPlayerPreset(player))
         break;
-        else
-        console.log("bad");
+        
         
     }
     // if(player>(PLAYER+1)) player =1;
@@ -419,12 +450,17 @@ function UpdateChance()
 
 function UpdateScoreBoard2()
 {
+   
     if(scores[1]> scores[2] && scores[1] > scores[3] && scores[1]> scores[4])
     {
         document.getElementById("kingb1").style.display="inline";
         document.getElementById("kingb2").style.display="none";
         document.getElementById("kingb3").style.display="none";
         document.getElementById("kingb4").style.display="none";
+        document.getElementById("Gkingb1").style.display="inline";
+        document.getElementById("Gkingb2").style.display="none";
+        document.getElementById("Gkingb3").style.display="none";
+        document.getElementById("Gkingb4").style.display="none";
     }
     else if(scores[2]> scores[1] && scores[2] > scores[3] && scores[2]> scores[4])
     {
@@ -432,6 +468,10 @@ function UpdateScoreBoard2()
         document.getElementById("kingb2").style.display="inline";
         document.getElementById("kingb3").style.display="none";
         document.getElementById("kingb4").style.display="none";
+        document.getElementById("Gkingb1").style.display="none";
+        document.getElementById("Gkingb2").style.display="inline";
+        document.getElementById("Gkingb3").style.display="none";
+        document.getElementById("Gkingb4").style.display="none";
     }
     else if(scores[3]> scores[1] && scores[3] > scores[2] && scores[3]> scores[4])
     {
@@ -439,6 +479,10 @@ function UpdateScoreBoard2()
         document.getElementById("kingb2").style.display="none";
         document.getElementById("kingb3").style.display="inline";
         document.getElementById("kingb4").style.display="none";
+        document.getElementById("Gkingb1").style.display="none";
+        document.getElementById("Gkingb2").style.display="none";
+        document.getElementById("Gkingb3").style.display="inline";
+        document.getElementById("Gkingb4").style.display="none";
     }
     else if(scores[4]> scores[1] && scores[4] > scores[3] && scores[4]> scores[1])
     {
@@ -446,6 +490,11 @@ function UpdateScoreBoard2()
         document.getElementById("kingb2").style.display="none";
         document.getElementById("kingb3").style.display="none";
         document.getElementById("kingb4").style.display="inline";
+
+        document.getElementById("Gkingb1").style.display="none";
+        document.getElementById("Gkingb2").style.display="none";
+        document.getElementById("Gkingb3").style.display="none";
+        document.getElementById("Gkingb4").style.display="inline";
     }
     else
     {
@@ -453,14 +502,30 @@ function UpdateScoreBoard2()
         document.getElementById("kingb2").style.display="none";
         document.getElementById("kingb3").style.display="none";
         document.getElementById("kingb4").style.display="none";
+
+        document.getElementById("Gkingb1").style.display="none";
+        document.getElementById("Gkingb2").style.display="none";
+        document.getElementById("Gkingb3").style.display="none";
+        document.getElementById("Gkingb4").style.display="none";
     }
     document.getElementById("scoreb1").innerHTML=""+scores[1];
     document.getElementById("scoreb2").innerHTML=""+scores[2];
     document.getElementById("scoreb3").innerHTML=""+scores[3];
     document.getElementById("scoreb4").innerHTML=""+scores[4];
+    
+    document.getElementById("nameb1").innerHTML=""+name1;
+    document.getElementById("nameb2").innerHTML=""+name2;
+    document.getElementById("nameb3").innerHTML=""+name3;
+    document.getElementById("nameb4").innerHTML=""+name4;
 
-    // document.getElementById("nameb1").innerHTML=""+name1;
-    // document.getElementById("nameb2").innerHTML=""+name2;
-    // document.getElementById("nameb3").innerHTML=""+name3;
-    // document.getElementById("nameb4").innerHTML=""+name4;
+    document.getElementById("Gscoreb1").innerHTML=""+scores[1];
+    document.getElementById("Gscoreb2").innerHTML=""+scores[2];
+    document.getElementById("Gscoreb3").innerHTML=""+scores[3];
+    document.getElementById("Gscoreb4").innerHTML=""+scores[4];
+    
+    document.getElementById("Gnameb1").innerHTML=""+name1;
+    document.getElementById("Gnameb2").innerHTML=""+name2;
+    document.getElementById("Gnameb3").innerHTML=""+name3;
+    document.getElementById("Gnameb4").innerHTML=""+name4;
+    
 }
